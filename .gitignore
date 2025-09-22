@@ -1,0 +1,36 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build Folders
+bin/
+obj/
+Debug/
+Release/
+
+# NuGet Packages
+packages/
+*.nupkg
+*.snupkg
+
+# SQL Server local database files
+*.mdf
+*.ldf
+*.log
+*.bak
+*.dbmdl
+
+# Publish folders
+Publish/
+*.Publish.xml
+
+# Others
+*.cache
+*.pdb
+*.tmp
+*.tmp_proj
+*.DS_Store
+

@@ -1,0 +1,178 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="Restaurent_Management_System_G3.AdminPages.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+    
+    .sidebar {
+        min-height: 100vh;
+        background: linear-gradient(180deg, #a12e21, #3a0d12);
+        color: #fff;
+        padding: 20px 10px;
+    }
+    .sidebar .profile {
+        display: flex;
+        align-items: center;
+        padding: 15px 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .sidebar .profile img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .sidebar .profile span {
+        font-weight: 600;
+        font-size: 15px;
+        color: #f1f1f1;
+    }
+    .sidebar h6 {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #bbb;
+        margin: 20px 10px 10px;
+    }
+    .sidebar a {
+        display: flex;
+        align-items: center;
+        color: #adb5bd;
+        padding: 10px 15px;
+        margin: 5px 0;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: all 0.2s;
+    }
+    .sidebar a i {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+    .sidebar a:hover, .sidebar a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-left: 4px solid #ffc107;
+    }
+    .content {
+        padding: 20px;
+        background-color: #fff;
+        min-height: 100vh;
+    }
+    /* Make sidebar full width on small screens when collapsed */
+    @media (max-width: 767px) {
+        .sidebar {
+            width: 100%;
+            min-height: auto;
+            padding: 15px;
+        }
+    }
+
+</style>
+
+</head>
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data">
+    <!-- Mobile Navbar Toggle -->
+    <nav class="navbar navbar-light d-md-none" style="background-color: #7B1E23">
+        <div class="container-fluid">
+            <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSidebarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="collapse d-md-none" id="mobileSidebarMenu">
+        <div class="sidebar">
+            <div class="profile mb-3">
+                <img src="../../images/user6.png" alt="User" />
+                <span><asp:Label ID="lblUsernameMobile" runat="server" Text="Guest"></asp:Label></span>
+            </div>
+
+            <h6>Navigation</h6>
+            <asp:HyperLink ID="lnkDashboardMobile" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Dashboard.aspx">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </asp:HyperLink>
+            <asp:HyperLink ID="lnkEmployeesMobile" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/EmployeeM.aspx">
+                <i class="bi bi-people-fill"></i> Employees
+            </asp:HyperLink>
+            <asp:HyperLink ID="lnkMenuMobile" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/MenuManagement.aspx">
+                <i class="bi bi-list-ul"></i> Menu Management
+            </asp:HyperLink>
+            <asp:HyperLink ID="lnkOrdersMobile" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Orders.aspx">
+                <i class="bi bi-basket-fill"></i> Orders
+            </asp:HyperLink>
+            <asp:HyperLink ID="lnkMessagesMobile" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Message.aspx">
+                <i class="bi bi-envelope-fill"></i> Messages
+            </asp:HyperLink>
+            <asp:HyperLink ID="lnkReportsMobile" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Report.aspx">
+                <i class="bi bi-bar-chart-line"></i> Reports
+            </asp:HyperLink>
+
+            <h6>Account</h6>
+            <asp:HyperLink ID="lnkLogoutMobile" runat="server" CssClass="nav-link" NavigateUrl="~/Logout.aspx">
+                <i class="bi bi-box-arrow-right"></i> Logout
+            </asp:HyperLink>
+        </div>
+    </div>
+
+    <div class="container-fluid sticky-top fw-bold">
+        <div class="row">
+            <!-- Desktop Sidebar -->
+            <div class="col-12 col-md-2 sidebar d-none d-md-block">
+                <div class="profile">
+                    <img src="../../images/user6.png" alt="User" />
+                    <span><asp:Label ID="lblUsername" runat="server" Text="Guest"></asp:Label></span>
+                </div>
+
+                <h6>Navigation</h6>
+                <asp:HyperLink ID="lnkDashboard" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Dashboard.aspx">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </asp:HyperLink>
+                <asp:HyperLink ID="lnkEmployees" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/EmployeeM.aspx">
+                    <i class="bi bi-people-fill"></i> Employees
+                </asp:HyperLink>
+                <asp:HyperLink ID="lnkMenu" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/MenuManagement.aspx">
+                    <i class="bi bi-list-ul"></i> Menu Management
+                </asp:HyperLink>
+                <asp:HyperLink ID="lnkOrders" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Orders.aspx">
+                    <i class="bi bi-basket-fill"></i> Orders
+                </asp:HyperLink>
+                <asp:HyperLink ID="lnkMessages" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Message.aspx">
+                    <i class="bi bi-envelope-fill"></i> Messages
+                </asp:HyperLink>
+                <asp:HyperLink ID="lnkReports" runat="server" CssClass="nav-link" NavigateUrl="~/AdminPages/Report.aspx">
+                    <i class="bi bi-bar-chart-line"></i> Reports
+                </asp:HyperLink>
+
+                <h6>Account</h6>
+                <asp:HyperLink ID="lnkLogout" runat="server" CssClass="nav-link" NavigateUrl="~/Logout.aspx">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </asp:HyperLink>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-12 col-md-10 content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+            </div>
+        </div>
+    </div>
+</form>
+
+    <script src="../Scripts/bootstrap.min.js"></script>
+</body>
+</html>

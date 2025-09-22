@@ -1,0 +1,123 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Public.master.cs" Inherits="Restaurent_Management_System_G3.PublicPages.Public" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <style>
+        .navbar .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #f7f1f1; /* Yellow underline */
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: #f7f1f1; /* Change text color on hover */
+        }
+
+        .navbar .nav-link:hover::after {
+            width: 100%; /* Expand underline */
+        }
+        .login-btn {
+            background-color: white;        
+            color: #7B1E23 !important;  
+            border-radius: 50px;         
+            padding: 6px 28px !important;             
+            border: 1px solid #7B1E23;       
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        
+    </style>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top justify-content-around" style="background-color: #7B1E23; font-family: 'Georgia', serif;">
+       <div class="container">
+           <a class="navbar-brand fw-bolder" href="HomePage.aspx">Golden Fork</a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+               <span class="navbar-toggler-icon"></span>
+           </button>
+           
+
+           <div class="collapse navbar-collapse text-white" id="navbarNav">
+               <ul class="navbar-nav ms-auto">
+                   <li class="nav-item fw-bold"><a class="nav-link text-white" href="/PublicPages/HomePage.aspx">Home</a></li>
+                   <li class="nav-item fw-bold"><a class="nav-link text-white" href="/PublicPages/MenuPage.aspx">Menu</a></li>
+                    <li class="nav-item fw-bold"><a class="nav-link text-white" href="/PublicPages/ContactPage.aspx">Contact</a></li>
+                    <li class="btn btn-sm fw-bold"><a class="nav-link login-btn" href="/Login.aspx">Login</a></li>   
+                </ul>    
+           </div>
+        </div>
+    </nav>
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+     <!-- Footer -->
+    <footer class="text-center bg-body-tertiary">
+        <div class="container pt-4">
+            <section class="mb-4">
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#" role="button">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#" role="button">
+                <i class="fab fa-twitter"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#" role="button">
+                <i class="fab fa-google"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#" role="button">
+                <i class="fab fa-instagram"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#" role="button">
+                <i class="fab fa-linkedin"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-body m-1" href="#" role="button">
+                <i class="fab fa-github"></i>
+                </a>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            <p class="mb-0">© 2025 Golden Fork. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200, // animation duration in ms
+        once: true      // animate only once per element
+      });
+    </script>
+    
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+</body>
+</html>
