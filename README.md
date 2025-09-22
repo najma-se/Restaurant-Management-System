@@ -1,6 +1,6 @@
 # Restaurant Management System (RMS)
 
-## 📌 Overview
+## Overview
 The Restaurant Management System (RMS) is a web-based application built using *ASP.NET Web Forms (C#)* and *SQL Server. It is designed to simplify and digitalize restaurant operations by providing a centralized platform for **administrators* and *employees*.
 
 The system handles:
@@ -17,14 +17,14 @@ The system handles:
 - Secure login and logout functionality
 - Role-based access (Admin and Employee)
 
-### 🛠 Admin Module
+### Admin Module
 - Add, edit, and remove menu items
 - Manage employee records
 - View and process customer orders
 - Generate sales reports
 - Access messages from (customers)
 
-### 👨‍🍳 Employee Module
+###  Employee Module
 - Can see availble menu
 - Take customer orders
 - View their order history
@@ -42,7 +42,7 @@ The system handles:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 Restaurent_Management_System_G3/
 ├── Database/                  ← SQL script for database
@@ -75,7 +75,7 @@ Restaurent_Management_System_G3/
 
 ---
 
-## 👥 User Roles
+##  User Roles
 - *Admin* – full access to menu, employees, orders, and reports.
 - *Employee* – can place orders and receive admin messages.
 
@@ -98,6 +98,6 @@ Restaurent_Management_System_G3/
 
 ---
 
-## 📜 License
+##  License
 This project is developed for academic/learning purposes. Modify and extend as needed.
 
