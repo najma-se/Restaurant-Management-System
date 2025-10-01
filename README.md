@@ -44,14 +44,14 @@ The system handles:
 ---
 
 ##  Project Structure
-
+```
 Restaurent_Management_System_G3/
 ├── Database/                  ← SQL script for database
 ├── Restaurent_Management_System_G3.sln
 ├── Restaurent_Management_System_G3/  ← ASP.NET project code
 ├── packages/                  ← NuGet packages (ignored by Git)
 ├── .gitignore
-
+```
 
 
 Restaurent_Management_System_G3/
