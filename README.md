@@ -53,7 +53,7 @@ Restaurent_Management_System_G3/
 ├── .gitignore
 ```
 
-
+```
 Restaurent_Management_System_G3/
 │── AdminPages/       # Admin dashboards and management pages
 │── EmployeePages/    # Employee-side pages
@@ -63,7 +63,7 @@ Restaurent_Management_System_G3/
 │── Logout.aspx       # Logout page
 │── RMSDataSet        # Database dataset integration
 │── Global.asax       # Application config
-
+```
 ---
 
 ## ⚙ Installation & Setup
